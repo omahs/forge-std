@@ -74,7 +74,7 @@ contract TestContract is Test {
     }
 
     function testFindExists() public {
-        // Lets say we want to find the slot for the public
+        // Let's say we want to find the slot for the public
         // variable `exists`. We just pass in the function selector
         // to the `find` command
         uint256 slot = stdstore.target(address(test)).sig("exists()").find();
@@ -82,7 +82,7 @@ contract TestContract is Test {
     }
 
     function testWriteExists() public {
-        // Lets say we want to write to the slot for the public
+        // Let's say we want to write to the slot for the public
         // variable `exists`. We just pass in the function selector
         // to the `checked_write` command
         stdstore.target(address(test)).sig("exists()").checked_write(100);
@@ -165,7 +165,7 @@ contract Storage {
 
 ### stdCheats
 
-This is a wrapper over miscellaneous cheatcodes that need wrappers to be more dev friendly. Currently there are only functions related to `prank`. In general, users may expect ETH to be put into an address on `prank`, but this is not the case for safety reasons. Explicitly this `hoax` function should only be used for address that have expected balances as it will get overwritten. If an address already has ETH, you should just use `prank`. If you want to change that balance explicitly, just use `deal`. If you want to do both, `hoax` is also right for you.
+This is a wrapper over miscellaneous cheatcodes that need wrappers to be more dev friendly. Currently there are only functions related to `prank`. In general, users may expect ETH to be put into an address on `prank`, but this is not the case for safety reasons. Explicitly this `hoax` function should only be used for addresses that have expected balances as it will get overwritten. If an address already has ETH, you should just use `prank`. If you want to change that balance explicitly, just use `deal`. If you want to do both, `hoax` is also right for you.
 
 
 #### Example usage:
